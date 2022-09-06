@@ -34,7 +34,7 @@ T maximum(T a, T b) {
     return a > b? a: b;
 }
 
-// Template de funciones especializados (a traves de la sobrecarga de funciones)
+// Template de funciones especializadas (a través de la sobrecarga de funciones)
 point_t<double> maximum(point_t<int> a, point_t<double> b) {
     auto sc1 = a.get_x() * a.get_x() + a.get_y() * a.get_y();
     auto sc2 = b.get_x() * b.get_x() + b.get_y() * b.get_y();
@@ -47,21 +47,19 @@ point_t<double> maximum(point_t<int> a, point_t<double> b) {
         return b;       // Double
 }
 
-// Template de funciones especializados ( a traves de la sobrecarga de template)
+// Template de funciones especializadas (a través de la sobrecarga de template)
 template<typename T, typename V>
 auto maximum(T a, V b) {
     return a > b ? a: b;
 }
 
-
-// Sobrecarga de operadores implementado como funcion
+// Sobrecarga de operadores implementada como función
 template <typename V, typename W>
 bool operator>(const point_t<V> p1, const point_t<W> p2) {
     auto sc1 = p1.get_x() * p1.get_x() + p1.get_y() * p1.get_y();
     auto sc2 = p2.get_x() * p2.get_x() + p2.get_y() * p2.get_y();
     return sc1 > sc2;
 }
-
 
 int main() {
     cout << maximum(10, 2) << endl;             // Implementa una funcion maximum(int, int)
@@ -77,8 +75,7 @@ int main() {
     cout << maximum(p1, p3) << endl;
 
     int x1  = 30000;       // 30000
-    double y1 = 30000;     // 2 secciones matinsa y exponente   3E4 --> 3 * 10^4
+    double y1 = 30000;     // 2 secciones mantisa y exponente   3E4 --> 3 * 10^4
     auto add_1  = reinterpret_cast<long long int>(&x1);
-    cout << add_1;
-    return 0;
+    cout << add_1;    return 0;
 }
